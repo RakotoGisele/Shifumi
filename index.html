@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js"></script>
+    <title>Shifumi game</title>
+</head>
+
+<body onload="change()" style="background-color: salmon;">
+    <h1 class="text-center font-weight-bold" style="background-color: darksalmon;">
+        SHIFUMI
+    </h1>
+    <div class="row">
+        <div class="col-5">
+        </div>
+        <div class="col-2"></div>
+        <div class="col-5"></div>
+    </div>
+    <div class="row mt-5">
+        <span onclick="change()" id="nom_utilisateur" class="col-5 text-center font-weight-bold"></span>
+        <div class="col-2 text-center" style="display: flex; justify-content: center; align-items: center;"><h2 class="font-weight-bold">Round<span id="number" class="badge badge-secondary m-3"> 0</span></h2></div>
+        <span class="col-5 text-center font-weight-bold">IAMON</span>
+    </div>
+    <!--paramètres utilisateur-->
+    <div class="row">
+        <div class="col-5 " style=" display:flex;  justify-content: space-around;">
+            <div class="p-2" style="border: solid 4px black;display: flex; justify-content: row;">
+                <div id="led_Utilisateur_1" class="pr-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color:darkgray;">
+                </div>
+                <div id="led_Utilisateur_2" class="pr-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color:darkgray;">
+                </div>
+                <div id="led_Utilisateur_3" class="p-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color:darkgray;">
+                </div>
+            </div>
+        </div>
+        <!--paramètres ordinateur-->
+        <div class="col-2"></div>
+        <div class="col-5" style=" display:flex;  justify-content: space-around;">
+            <div class="p-2" style="border: solid 4px black;display: flex; justify-content: row;">
+                <div id="led_Ordinateur_1" class="pr-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color: darkgray;">
+                </div>
+                <div id="led_Ordinateur_2" class="pr-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color: darkgray;">
+                </div>
+                <div id="led_Ordinateur_3" class="p-1"
+                    style="border: solid 2px black; border-radius: 50%; height: 60px; width: 60px; background-color: darkgray;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-5 text-center">
+            <img id="signe_utilisateur" src="../Shifumi/perspective-dice-six-faces-random.svg" alt="pierre" width="200px" height="200px">
+        </div>
+        <div class="col-2 text-center mt-5" style="display: flex; justify-content: center; align-items: center;">
+            <button id="refresh" class="btn btn-secondary" onclick="document.location.reload(false)"> REJOUER </button>
+        </div>
+        <div class="col-5 text-center"><img id="choix_ordinateur" src="../Shifumi/perspective-dice-six-faces-random.svg"
+                alt="pierre" width="200px" height="200px">
+        </div>
+    </div>
+    <div class="row mt-5 pt-5">
+        <div onclick="choix_utilisateur('pierre')" class="col-5" style="display: flex; justify-content: center;">
+            <img src="rock-golem.svg" alt="pierre" width="200px" height="200px">
+        </div>
+        <div onclick="choix_utilisateur('feuille')" class="col-2" style="display: flex; justify-content: center;">
+            <img src="scroll-unfurled.svg" alt="feuille" width="200px" height="200px">
+        </div>
+        <div onclick="choix_utilisateur('ciseau')" class="col-5" style="display: flex; justify-content: center;">
+            <img src="scissors.svg" alt="ciseau" width="200px" height="200px">
+        </div>
+    </div>
+</body>
+</html>
